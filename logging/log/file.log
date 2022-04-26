@@ -1,0 +1,26 @@
+2022-04-26T00:22:40.647045+08:00 - This is a info level message
+2022-04-26T00:26:34.087321+08:00 - This is a info level message
+2022-04-26 00:27:11 - This is a info level message
+2022-04-26 00:27:26 - This is a info level message
+2022-04-26 00:27:51 - This is a info level message
+2022-04-26T00:28:22.035957+08:00 - This is a info level message
+2022-04-26T00:28:54.563813+08:00 INFO - This is a info level message
+2022-04-26T00:29:02.164251+08:00 INFO - This is a info level message
+2022-04-26T00:29:22.738179+08:00 INFO - This is a info level message
+2022-04-26T00:29:43.559767+08:00 INFO - This is a info level message
+2022-04-26 00:30:00 [INFO] log4rs_default - This is a info level message
+2022-04-26 00:30:07 [INFO] log4rs_default - This is a info level message
+2022-04-26 00:30:18 [INFO] log4rs_default - This is a info level message
+2022-04-26 00:30:21 [INFO] log4rs_default - This is a info level message
+2022-04-26 00:30:23 [INFO] log4rs_default - This is a info level message
+2022-04-26 00:30:24 [INFO] log4rs_default - This is a info level message
+2022-04-26 00:30:24 [INFO] log4rs_default - This is a info level message
+2022-04-26 00:30:25 [INFO] log4rs_default - This is a info level message
+2022-04-26 00:32:20 [INFO] log4rs_default - This is a INFO message
+2022-04-26 00:32:20 [ERROR] log4rs_default - This is a ERROR message
+2022-04-26 00:32:20 [WARN] log4rs_default - This is a WARN message
+2022-04-26 00:33:48 [INFO] log4rs_default - This is a INFO message
+2022-04-26 00:33:48 [DEBUG] log4rs_default - This is a DEBUG message
+2022-04-26 00:33:48 [ERROR] log4rs_default - This is a ERROR message
+2022-04-26 00:33:48 [TRACE] log4rs_default - This is a TRACE message
+2022-04-26 00:33:48 [WARN] log4rs_default - This is a WARN message

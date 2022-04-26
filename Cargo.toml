@@ -1,0 +1,16 @@
+[workspace]
+
+members = [
+    "algorithm",
+    "commandline",
+    "compress",
+    "concurrency",
+    "cryptography",
+    "data-structure",
+    "macros",
+    "database",
+    "datetime",
+    "logging",
+    "encoding",
+    "web-programming",
+]
