@@ -1,6 +1,6 @@
 extern crate url;
 
-use url::{Url, ParseError};
+use url::{ParseError, Url};
 
 fn main() -> Result<(), ParseError> {
     let path = "/rust-lang/cargo";
@@ -22,10 +22,11 @@ fn build_github_url(path: &str) -> Result<Url, ParseError> {
     Ok(joined)
 }
 
+#[allow(unused)]
 fn build_github_url1(path: &str) -> Result<Url, ParseError> {
     const GITHUB: &str = "https://github.com";
     let base = Url::parse(GITHUB).expect("hardcoded URL is known to be valid");
-    let joined  = base.join(path)?;
+    let joined = base.join(path)?;
 
     Ok(joined)
 }

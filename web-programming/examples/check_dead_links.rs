@@ -24,7 +24,7 @@ async fn get_base_url(url: &Url, doc: &Document) -> Result<Url> {
         .next();
 
     // Option.map_or_else(func_None, func_Some)
-    // 对 Option 类型的值指定两个函数, 
+    // 对 Option 类型的值指定两个函数,
     // - 如果 Option 值为 None 运行第一个函数
     // - 如果 Option 值为 Some 运行第二个函数
     let base_url =

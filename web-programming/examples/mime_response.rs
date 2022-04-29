@@ -1,15 +1,15 @@
 use error_chain::error_chain;
 use mime::Mime;
-use std::str::FromStr;
 use reqwest::header::CONTENT_TYPE;
+use std::str::FromStr;
 
- error_chain! {
-    foreign_links {
-        Reqwest(reqwest::Error);
-        Header(reqwest::header::ToStrError);
-        Mime(mime::FromStrError);
-    }
- }
+error_chain! {
+   foreign_links {
+       Reqwest(reqwest::Error);
+       Header(reqwest::header::ToStrError);
+       Mime(mime::FromStrError);
+   }
+}
 
 #[tokio::main]
 async fn main() -> Result<()> {

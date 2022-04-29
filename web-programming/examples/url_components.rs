@@ -1,5 +1,4 @@
-
-use url::{Url, Host, ParseError};
+use url::{Host, ParseError, Url};
 
 fn main() -> Result<(), ParseError> {
     let s = "ftp://rust-lang.org/examples";
@@ -15,5 +14,17 @@ fn main() -> Result<(), ParseError> {
     println!("  host: {}", url.host().unwrap());
     println!("  port: {}", url.port_or_known_default().unwrap());
 
+    let url = build_url()?;
+    println!("Build URL: {}", url);
+
     Ok(())
+}
+
+fn build_url() -> Result<Url, ParseError> {
+    let mut url = Url::parse("https://localhost/")?;
+    url.set_path("index");
+    url.query_pairs_mut().append_pair("name", "value").finish();
+
+    // https://localhost/index?name=value
+    Ok(url)
 }

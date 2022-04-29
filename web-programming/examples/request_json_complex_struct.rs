@@ -65,7 +65,6 @@ pub struct Links {
     pub version_downloads: String,
 }
 
-
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Build the client using the builder pattern

@@ -1,5 +1,4 @@
-
-use url::{Url, ParseError};
+use url::{ParseError, Url};
 
 fn main() -> Result<(), ParseError> {
     let s = "https://github.com/rust-lang/rust/issues?labels=E-easy&state=open";

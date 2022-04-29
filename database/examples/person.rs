@@ -1,6 +1,7 @@
 use rusqlite::{params, Connection, Result};
 
 #[derive(Debug)]
+#[allow(dead_code)]
 struct Person {
     id: i32,
     name: String,

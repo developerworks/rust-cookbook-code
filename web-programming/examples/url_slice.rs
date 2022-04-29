@@ -10,7 +10,7 @@ fn main() -> Result<(), ParseError> {
     println!("  orgin url: {}", url);
     println!("cleaned url: {}", cleaned);
 
-    // Slice the url by Position index
+    // Slice the url by position index
     // The position index is compute by slicing.rs module from url crate
     // You can access url components with position index
     // For example:
@@ -36,18 +36,22 @@ fn main() -> Result<(), ParseError> {
 
     // I get a point, use Url to parse mysql database connection string to connection params
     let params = Url::parse("mysql://root:root@localhost/database?characterEncoding=utf-8")?;
-    println!("  schema: {},\nusername: {},\npassword: {},\n    host: {},\ndatabase: {}\n", 
-        params.scheme(), 
-        params.username(), 
-        params.password().unwrap(), 
-        params.host().unwrap(), 
+    println!(
+        "  schema: {},\nusername: {},\npassword: {},\n    host: {},\ndatabase: {}\n",
+        params.scheme(),
+        params.username(),
+        params.password().unwrap(),
+        params.host().unwrap(),
         params.path().get(1..).unwrap()
     );
     for p in params.query_pairs() {
-        println!("propertiy pair: {:?}, key = {}, value = {}", p.borrow(), p.borrow().0, p.borrow().1);
+        println!(
+            "propertiy pair: {:?}, key = {}, value = {}",
+            p.borrow(),
+            p.borrow().0,
+            p.borrow().1
+        );
     }
-    
-
 
     Ok(())
 }

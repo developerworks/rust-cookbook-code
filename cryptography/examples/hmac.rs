@@ -1,6 +1,6 @@
-use ring::{hmac, rand};
-use ring::rand::SecureRandom;
 use ring::error::Unspecified;
+use ring::rand::SecureRandom;
+use ring::{hmac, rand};
 
 fn main() -> Result<(), Unspecified> {
     // 秘钥值
@@ -16,11 +16,17 @@ fn main() -> Result<(), Unspecified> {
     // }
     let key = hmac::Key::new(hmac::HMAC_SHA256, &key_value);
 
+    // =======
     // 待签名消息
+    // =======
     let message = "Legitimate and important message.";
+    // =======
     // 签名
+    // =======
     let signature = hmac::sign(&key, message.as_bytes());
+    // =======
     // 验证
+    // =======
     hmac::verify(&key, message.as_bytes(), signature.as_ref())
 
     // Ok(())

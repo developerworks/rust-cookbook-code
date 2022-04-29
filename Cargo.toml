@@ -13,4 +13,6 @@ members = [
     "logging",
     "encoding",
     "web-programming",
+    "linear_algebra",
+    "error_handling",
 ]

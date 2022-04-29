@@ -74,7 +74,6 @@ pub struct Links {
     pub version_downloads: String,
 }
 
-
 struct ReverseDependencies {
     crate_id: String,
     dependencies: <Vec<Dependency> as IntoIterator>::IntoIter,
@@ -98,6 +97,7 @@ impl ReverseDependencies {
         })
     }
 
+    #[allow(unused)]
     fn try_next(&mut self) -> Result<Option<Dependency>> {
         if let Some(dep) = self.dependencies.next() {
             return Ok(Some(dep));
@@ -115,18 +115,14 @@ impl ReverseDependencies {
 
         // Localhost is OK!
         // let url = "http://localhost:8888/webapi_pagination.json".to_owned(); // python3 -m http.server 8888
-        
+
         // or Online version!
         let url = "https://raw.githubusercontent.com/developerworks/rust-cookbook-code/main/web-programming/examples/webapi_pagination.json".to_owned();
-        
+
         println!("url: {}", url);
 
-        let response = self
-            .client
-            .get(&url)
-            .send()?
-            .json::<ApiResponse>()?;
-        
+        let response = self.client.get(&url).send()?.json::<ApiResponse>()?;
+
         // Why can not access crates.io behand Cloudflare, cause by: Decode error
         // Reference to: examples/request_json_test.rs
         println!("response: {:?}", response);

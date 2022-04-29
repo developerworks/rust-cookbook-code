@@ -31,7 +31,6 @@ fn demo() -> Result<(), DecodeError> {
     let decoded = decode(encoded);
 
     println!("decoded: {}", decoded);
-
     Ok(())
 }
 

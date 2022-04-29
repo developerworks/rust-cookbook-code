@@ -1,6 +1,6 @@
+use reqwest::ClientBuilder;
 use reqwest::Result;
 use std::time::Duration;
-use reqwest::ClientBuilder;
 
 #[tokio::main]
 async fn main() -> Result<()> {

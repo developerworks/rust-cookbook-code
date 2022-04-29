@@ -1,7 +1,7 @@
 use rusqlite::{Connection, Result};
 use std::collections::HashMap;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 struct Cat {
     name: String,
     color: String,
@@ -41,8 +41,8 @@ fn main() -> Result<()> {
         })
     })?;
 
-    for cat in cats {
-        println!("Found cat {:?}", cat);
+    for cat in cats.flatten() {
+        println!("Found cat name: {}, cat color: {}", cat.name, cat.color);
     }
 
     Ok(())

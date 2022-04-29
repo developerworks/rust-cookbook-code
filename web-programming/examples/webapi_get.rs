@@ -2,6 +2,7 @@ use reqwest::Error;
 use serde::Deserialize;
 
 #[derive(Deserialize, Debug)]
+#[allow(unused)]
 struct User {
     login: String,
     id: u32,

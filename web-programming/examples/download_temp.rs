@@ -1,6 +1,6 @@
 use error_chain::error_chain;
-use std::io::copy;
 use std::fs::File;
+use std::io::copy;
 use tempfile::Builder;
 
 error_chain! {
@@ -12,8 +12,11 @@ error_chain! {
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    // 临时目录
     let tmp_dir = Builder::new().prefix("example").tempdir()?;
+    // 文件 URL
     let target = "https://www.rust-lang.org/logos/rust-logo-512x512.png";
+    // 应答对象
     let response = reqwest::get(target).await?;
 
     let mut dest = {
@@ -29,7 +32,7 @@ async fn main() -> Result<()> {
         println!("will be located under: '{:?}'", fname);
         File::create(fname)?
     };
-    let content =  response.text().await?;
+    let content = response.text().await?;
     copy(&mut content.as_bytes(), &mut dest)?;
     Ok(())
 }
