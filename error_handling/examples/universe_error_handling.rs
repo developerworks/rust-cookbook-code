@@ -24,6 +24,7 @@ fn parse_response(mut response: Response) -> Result<u32> {
     body.pop();
 
     // Parse number
+    // std::num::ParseIntError
     body.parse::<u32>()
         .chain_err(|| ErrorKind::RandomResponseError(body))
 }
@@ -35,7 +36,10 @@ fn run() -> Result<()> {
     let url = "https://www.random.org/integers/?num=1&min=0&max=10&col=1&base=10&format=plain"
         .to_string();
     // 动态构造, 适合于需要动态创建的 URL
+    // ParseError
     let dynamic_base = Url::parse("https://www.random.org")?;
+
+    // url::ParseError
     let mut dynamic_url = dynamic_base.join("integers")?;
     dynamic_url
         .query_pairs_mut()
@@ -48,6 +52,8 @@ fn run() -> Result<()> {
 
     let dynamic_s = dynamic_url.as_str();
     println!("dynamic construct url: {}", dynamic_s);
+
+    // reqwest::Error
     let response = blocking::get(dynamic_s)?;
     let random_value: u32 = parse_response(response)?;
     println!("a random number between 0 and 10: {}", random_value);
@@ -75,7 +81,6 @@ fn demo() -> Result<()> {
     for i in [1, 2, 3, 4, 5, 6, 7, 8, 9] {
         println!("array element: {}", i);
     }
-
 
     // 通过 from_str() 构造 URL
     // from_str() 内部使用 Url::parse()

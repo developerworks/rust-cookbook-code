@@ -1,11 +1,10 @@
-use rand::distributions::{Distribution, Alphanumeric};
+use rand::distributions::{Alphanumeric, Distribution};
 use rand::{thread_rng, Rng};
 
 #[inline]
 pub fn generate(len: usize) -> String {
     let rng = thread_rng();
     // let v: Vec<f32> = Standard.sample_iter(rng).take(16).collect();
-
     let v: Vec<u8> = Alphanumeric.sample_iter(rng).take(len).collect();
     let s = String::from_utf8(v);
     if let Ok(s) = s {
@@ -16,6 +15,7 @@ pub fn generate(len: usize) -> String {
 }
 
 #[inline]
+#[rustfmt::skip]
 pub fn generate_from_chars(len: usize) -> String {
     const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789)(*&^%$#@!~";
     let mut rng = thread_rng();

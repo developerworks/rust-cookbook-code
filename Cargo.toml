@@ -15,4 +15,8 @@ members = [
     "web-programming",
     "linear_algebra",
     "error_handling",
+    "text-handling",
+    "devtools_c",
+    "devtools_c_define",
+    "devtools_cpp",
 ]

@@ -114,10 +114,10 @@ impl ReverseDependencies {
         );
 
         // Localhost is OK!
-        // let url = "http://localhost:8888/webapi_pagination.json".to_owned(); // python3 -m http.server 8888
+        // let url = "http://localhost:8888/api_pagination.json".to_owned(); // python3 -m http.server 8888
 
         // or Online version!
-        let url = "https://raw.githubusercontent.com/developerworks/rust-cookbook-code/main/web-programming/examples/webapi_pagination.json".to_owned();
+        let url = "https://raw.githubusercontent.com/developerworks/rust-cookbook-code/main/web-programming/examples/api_pagination.json".to_owned();
 
         println!("url: {}", url);
 

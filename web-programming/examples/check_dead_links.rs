@@ -42,7 +42,7 @@ async fn check_link(url: &Url) -> Result<bool> {
 async fn main() -> Result<()> {
     let url = Url::parse("https://www.rust-lang.org/en-US/")?;
     let res = reqwest::get(url.as_ref()).await?.text().await?;
-    // 文档对象
+    // 文档对象 DOM
     let document = Document::from(res.as_str());
     let base_url = get_base_url(&url, &document).await?;
 

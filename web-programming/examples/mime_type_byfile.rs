@@ -1,3 +1,4 @@
+// 通过文件后缀名判断 Mime 类型
 use mime::Mime;
 use tabular::{Row, Table};
 

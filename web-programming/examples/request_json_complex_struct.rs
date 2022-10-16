@@ -72,8 +72,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Perform the actual execution of the network request
     let res = client
-        // .get("http://localhost:8888/webapi_pagination.json") // python3 -m http.server 8888
-        .get("https://raw.githubusercontent.com/developerworks/rust-cookbook-code/main/web-programming/examples/webapi_pagination.json")
+        // .get("http://localhost:8888/api_pagination.json") // python3 -m http.server 8888
+        .get("https://raw.githubusercontent.com/developerworks/rust-cookbook-code/main/web-programming/examples/api_pagination.json")
         .send()
         .await?;
 
