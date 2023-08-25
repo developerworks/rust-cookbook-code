@@ -1,9 +1,9 @@
-mod rand_password;
-mod sortby;
-
 use rand::{self, Rng};
 // 均匀分布
 use rand::distributions::{Distribution, Standard, Uniform};
+
+mod rand_password;
+mod sortby;
 
 #[derive(Debug)]
 struct Point {

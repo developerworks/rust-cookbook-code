@@ -1,8 +1,9 @@
+use std::collections::HashSet;
+
 use error_chain::error_chain;
 use reqwest::StatusCode;
 use select::document::Document;
 use select::predicate::Name;
-use std::collections::HashSet;
 use url::{Position, Url};
 
 // 错误链: 函数调用链中所有可能返回的错误集中处理

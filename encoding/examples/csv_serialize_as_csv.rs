@@ -1,7 +1,7 @@
+use std::io;
+
 use error_chain::error_chain;
 use serde::Serialize;
-
-use std::io;
 
 error_chain! {
     foreign_links {
@@ -15,7 +15,7 @@ struct User {
     id: u64,
     name: String,
     #[serde(rename = "mail")]
-    email: String
+    email: String,
 }
 
 fn main() -> Result<()> {
@@ -33,7 +33,7 @@ fn main() -> Result<()> {
     wtr.serialize(User {
         id: 4,
         name: "王二小".to_string(),
-        email: "wangerxiao@gmail.com".to_string()
+        email: "wangerxiao@gmail.com".to_string(),
     })?;
 
     // 还可以是一个 Vec

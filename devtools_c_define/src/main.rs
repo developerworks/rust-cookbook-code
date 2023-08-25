@@ -2,8 +2,8 @@ extern {
     fn print_app_info();
 }
 
-fn main(){
+fn main() {
     unsafe {
         print_app_info();
-    }   
+    }
 }

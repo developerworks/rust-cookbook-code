@@ -1,5 +1,6 @@
-use rusqlite::{Connection, Result};
 use std::collections::HashMap;
+
+use rusqlite::{Connection, Result};
 
 #[derive(Debug, Clone)]
 struct Cat {

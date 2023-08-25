@@ -1,4 +1,5 @@
 use serde::Deserialize;
+
 #[derive(Deserialize)]
 struct Car {
     year: u16,

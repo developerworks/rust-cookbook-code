@@ -1,7 +1,8 @@
-use data_encoding::HEXUPPER;
-use ring::digest::{Context, Digest, SHA256};
 use std::fs::File;
 use std::io::{BufReader, Read, Result, Write};
+
+use data_encoding::HEXUPPER;
+use ring::digest::{Context, Digest, SHA256};
 
 //
 fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest> {
@@ -18,6 +19,9 @@ fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest> {
     Ok(context.finish())
 }
 
+/////////////////////////////////////
+/// 计算文件的 SHA-256 摘要
+///////////////////////////////////// 
 fn main() -> Result<()> {
     let path = "timg.txt";
 

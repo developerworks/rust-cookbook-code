@@ -20,6 +20,7 @@
 For example:
 
 Compute a digest of contents of a text file
+
 ```
 cargo run --example hashing
    Compiling cryptography v0.1.0 (/Users/xxx/2022/languages/rust/rust-cookbook-code/cryptography)

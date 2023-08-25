@@ -1,11 +1,13 @@
-use byteorder::{LittleEndian, ReadBytesExt, WriteBytesExt};
 use std::io::Error;
+
+use byteorder::{LittleEndian, ReadBytesExt, WriteBytesExt};
 
 #[derive(Default, PartialEq, Debug)]
 struct Payload {
     kind: u8,
     value: u16,
 }
+
 // 以小端模式（低位模式）字节顺序读写整数
 fn main() -> Result<(), Error> {
     let original_payload = Payload::default();

@@ -1,8 +1,9 @@
-use error_chain::error_chain;
-use reqwest::header::{HeaderValue, CONTENT_LENGTH, RANGE};
-use reqwest::StatusCode;
 use std::fs::File;
 use std::str::FromStr;
+
+use error_chain::error_chain;
+use reqwest::header::{CONTENT_LENGTH, HeaderValue, RANGE};
+use reqwest::StatusCode;
 
 error_chain! {
     foreign_links {

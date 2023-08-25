@@ -1,5 +1,6 @@
-use crossbeam::channel::unbounded;
 use std::{thread, time};
+
+use crossbeam::channel::unbounded;
 
 pub fn data() {
     let (sender, receiver) = unbounded::<i32>();
@@ -29,5 +30,5 @@ pub fn data() {
             );
         }
     })
-    .unwrap();
+        .unwrap();
 }

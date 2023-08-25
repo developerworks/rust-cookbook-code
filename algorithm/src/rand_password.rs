@@ -1,5 +1,5 @@
+use rand::{Rng, thread_rng};
 use rand::distributions::{Alphanumeric, Distribution};
-use rand::{thread_rng, Rng};
 
 #[inline]
 pub fn generate(len: usize) -> String {

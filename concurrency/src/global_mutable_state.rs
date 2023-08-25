@@ -1,5 +1,6 @@
-use lazy_static::lazy_static;
 use std::{sync::Mutex, thread::Result};
+
+use lazy_static::lazy_static;
 
 // 全局可变状态
 lazy_static! {

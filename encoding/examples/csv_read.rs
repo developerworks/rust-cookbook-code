@@ -9,7 +9,7 @@ fn main() -> Result<(), Error> {
 
     // 构造 Reader 对象
     let mut reader = csv::Reader::from_reader(csv.as_bytes());
-    
+
     // 迭代
     for record in reader.records() {
         let record = record?;

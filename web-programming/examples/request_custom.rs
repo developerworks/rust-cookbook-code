@@ -1,6 +1,7 @@
+use std::collections::HashMap;
+
 use reqwest::header::HeaderMap;
 use serde_json::value::Value;
-use std::collections::HashMap;
 
 async fn get() -> Result<HashMap<String, String>, reqwest::Error> {
     let res = reqwest::get("https://httpbin.org/ip")

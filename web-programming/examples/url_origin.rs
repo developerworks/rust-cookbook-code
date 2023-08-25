@@ -1,5 +1,4 @@
 use error_chain::error_chain;
-
 use url::{Host, Origin, Url};
 
 error_chain! {

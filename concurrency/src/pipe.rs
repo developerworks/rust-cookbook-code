@@ -1,6 +1,7 @@
-use crossbeam::channel::bounded;
 use std::thread;
 use std::time::Duration;
+
+use crossbeam::channel::bounded;
 
 // use rand::Rng;
 // use std::cmp;

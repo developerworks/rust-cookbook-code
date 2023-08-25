@@ -1,7 +1,8 @@
-use error_chain::error_chain;
-use csv::{Reader, Writer};
-use serde::{de, Deserialize, Deserializer};
 use std::str::FromStr;
+
+use csv::{Reader, Writer};
+use error_chain::error_chain;
+use serde::{de, Deserialize, Deserializer};
 
 error_chain! {
    foreign_links {
@@ -45,8 +46,8 @@ impl FromStr for HexColor {
 
 impl<'de> Deserialize<'de> for HexColor {
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: Deserializer<'de>,
+        where
+            D: Deserializer<'de>,
     {
         let s = String::deserialize(deserializer)?;
         FromStr::from_str(&s).map_err(de::Error::custom)

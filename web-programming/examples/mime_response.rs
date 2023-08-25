@@ -1,8 +1,9 @@
+use std::str::FromStr;
+
 // https://rustwiki.org/zh-CN/rust-cookbook/web/mime.html#%E8%A7%A3%E6%9E%90-http-%E5%93%8D%E5%BA%94%E7%9A%84-mime-%E7%B1%BB%E5%9E%8B
 use error_chain::error_chain;
 use mime::Mime;
 use reqwest::header::CONTENT_TYPE;
-use std::str::FromStr;
 
 error_chain! {
    foreign_links {

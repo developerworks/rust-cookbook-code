@@ -1,8 +1,9 @@
+use std::env;
+
 use error_chain::error_chain;
 use reqwest::Client;
 use serde::Deserialize;
 use serde_json::json;
-use std::env;
 
 error_chain! {
     foreign_links {

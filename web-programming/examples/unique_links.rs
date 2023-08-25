@@ -1,8 +1,9 @@
-use lazy_static::lazy_static;
-use regex::Regex;
 use std::borrow::Cow;
 use std::collections::HashSet;
 use std::error::Error;
+
+use lazy_static::lazy_static;
+use regex::Regex;
 
 fn extract_links(content: &str) -> HashSet<Cow<str>> {
     lazy_static! {
@@ -33,9 +34,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let content = reqwest::get(
         "https://en.wikipedia.org/w/index.php?title=Rust_(programming_language)&action=raw",
     )
-    .await?
-    .text()
-    .await?;
+        .await?
+        .text()
+        .await?;
 
     println!("{:#?}", extract_links(content.as_str()));
 

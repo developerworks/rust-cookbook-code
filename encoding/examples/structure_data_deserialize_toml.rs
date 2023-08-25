@@ -1,7 +1,7 @@
-use serde::Deserialize;
-
-use toml::de::Error;
 use std::collections::HashMap;
+
+use serde::Deserialize;
+use toml::de::Error;
 
 #[derive(Deserialize, Debug)]
 struct Config {

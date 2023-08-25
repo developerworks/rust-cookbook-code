@@ -1,7 +1,10 @@
+use ring::{hmac, rand};
 use ring::error::Unspecified;
 use ring::rand::SecureRandom;
-use ring::{hmac, rand};
 
+///////////////////////////////////
+// 使用 HMAC 摘要对消息进行签名和验证
+///////////////////////////////////
 fn main() -> Result<(), Unspecified> {
     // 秘钥值
     let mut key_value = [0u8; 48];

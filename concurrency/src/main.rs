@@ -1,16 +1,17 @@
 // #![feature(mutex_unlock)]
 
+use std::{io::Error, sync::mpsc::channel};
+
+use log::info;
+use threadpool::ThreadPool;
+use walkdir::WalkDir;
+
 mod filehash;
 mod find_max;
 mod global_mutable_state;
 mod pass_data;
 mod pipe;
 
-use std::{io::Error, sync::mpsc::channel};
-use threadpool::ThreadPool;
-use walkdir::WalkDir;
-
-use log::{info};
 // use log4rs;
 
 fn main() {

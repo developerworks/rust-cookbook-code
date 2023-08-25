@@ -1,8 +1,9 @@
+use std::num::NonZeroU32;
+
 use data_encoding::HEXUPPER;
+use ring::{digest, pbkdf2, rand};
 use ring::error::Unspecified;
 use ring::rand::SecureRandom;
-use ring::{digest, pbkdf2, rand};
-use std::num::NonZeroU32;
 
 fn main() -> Result<(), Unspecified> {
     // 64位凭证输出长度

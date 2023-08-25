@@ -1,7 +1,7 @@
-use mime::{Mime, APPLICATION_OCTET_STREAM};
+use mime::{APPLICATION_OCTET_STREAM, Mime};
+
 // 解析字符串为 Mime 类型
 fn main() {
-    
     let invalid_mime_type = "i n v a l i d";
     let default_mime = invalid_mime_type
         .parse::<Mime>()

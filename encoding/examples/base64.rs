@@ -1,7 +1,7 @@
-use error_chain::error_chain;
+use std::str;
 
 use base64::{decode, encode};
-use std::str;
+use error_chain::error_chain;
 
 error_chain! {
     foreign_links {

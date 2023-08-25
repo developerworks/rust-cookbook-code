@@ -1,5 +1,6 @@
-use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ApiResponse {
@@ -7,6 +8,7 @@ pub struct ApiResponse {
     pub meta: Meta,
     pub versions: Vec<Version>,
 }
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Dependency {
     pub crate_id: String,
@@ -25,6 +27,7 @@ pub struct Dependency {
 pub struct Meta {
     pub total: u64,
 }
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Version {
     pub audit_actions: Vec<AuditAction>,
@@ -44,12 +47,14 @@ pub struct Version {
     pub updated_at: String,
     pub yanked: bool,
 }
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct AuditAction {
     pub action: String,
     pub time: String,
     pub user: PublishedBy,
 }
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct PublishedBy {
     pub avatar: String,
@@ -58,6 +63,7 @@ pub struct PublishedBy {
     pub name: String,
     pub url: String,
 }
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Links {
     pub authors: String,

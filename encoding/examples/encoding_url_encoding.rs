@@ -1,5 +1,6 @@
-use percent_encoding::{percent_decode, utf8_percent_encode, AsciiSet, CONTROLS};
 use std::str::Utf8Error;
+
+use percent_encoding::{AsciiSet, CONTROLS, percent_decode, utf8_percent_encode};
 
 /// https://url.spec.whatwg.org/#fragment-percent-encode-set
 const FRAGMENT: &AsciiSet = &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');

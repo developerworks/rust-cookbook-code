@@ -1,11 +1,10 @@
-use error_chain::error_chain;
-
 use std::fs::create_dir_all;
 use std::path::Path;
 
 use error_chain::ChainedError;
+use error_chain::error_chain;
 use glob::{glob_with, MatchOptions};
-use image::{imageops::FilterType, ImageError};
+use image::{ImageError, imageops::FilterType};
 use rayon::prelude::*;
 
 error_chain! {
@@ -21,7 +20,7 @@ const THUMB_DIR: &str = "/Users/zhouyou/2022/languages/rust/rust-cookbook-code/c
 fn main() -> Result<()> {
     let p = "images/*.jpeg";
     let o = String::from(IMAGE_DIR) + "/" + p;
-    
+
     let options: MatchOptions = Default::default();
     let files: Vec<_> = glob_with(o.as_str(), options)?
         .filter_map(|x| x.ok())
@@ -63,17 +62,17 @@ fn make_thumbnail<Source, Distination>(
     thumb_dir: Distination,
     longest_edge: u32,
 ) -> Result<()>
-where
-    Source: AsRef<Path>,
-    Distination: AsRef<Path>,
+    where
+        Source: AsRef<Path>,
+        Distination: AsRef<Path>,
 {
-    let original_path = &(*original.as_ref());
-    
+    let original_path = original.as_ref();
+
     let img = image::open(original.as_ref())?;
     let file_path = Path::new(thumb_dir.as_ref()).join(original_path.file_name().unwrap());
     println!("thumbnail: {:?}", file_path);
     // println!("original: {:?}", original_path);
-    
+
 
     Ok(img
         .resize(longest_edge, longest_edge, FilterType::Nearest)

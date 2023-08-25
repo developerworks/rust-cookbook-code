@@ -1,8 +1,9 @@
 //! 使用 percent-encoding crate 中的 `utf8_percent_encode`
 //! 函数对输入字符串进行百分比编码（URL 编码）。
 //! 解码使用 `percent_decode` 函数。
-use percent_encoding::{percent_decode, utf8_percent_encode, AsciiSet, CONTROLS};
 use std::str::Utf8Error;
+
+use percent_encoding::{AsciiSet, CONTROLS, percent_decode, utf8_percent_encode};
 
 /// https://url.spec.whatwg.org/#fragment-percent-encode-set
 const FRAGMENT: &AsciiSet = &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');

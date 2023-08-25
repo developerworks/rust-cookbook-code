@@ -1,4 +1,4 @@
-use rusqlite::{params, Connection, Result};
+use rusqlite::{Connection, params, Result};
 
 #[derive(Debug)]
 #[allow(dead_code)]

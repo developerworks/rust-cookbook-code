@@ -1,6 +1,7 @@
+use std::{io::Read, str::FromStr};
+
 use error_chain::error_chain;
 use reqwest::blocking::{self, Response};
-use std::{io::Read, str::FromStr};
 use url::Url;
 
 error_chain! {
@@ -33,7 +34,7 @@ fn parse_response(mut response: Response) -> Result<u32> {
 fn run() -> Result<()> {
     // 静态
     #[allow(unused)]
-    let url = "https://www.random.org/integers/?num=1&min=0&max=10&col=1&base=10&format=plain"
+        let url = "https://www.random.org/integers/?num=1&min=0&max=10&col=1&base=10&format=plain"
         .to_string();
     // 动态构造, 适合于需要动态创建的 URL
     // ParseError
@@ -63,13 +64,13 @@ fn run() -> Result<()> {
 #[rustfmt::skip]
 fn main() -> Result<()> {
     // 统一错误处理    
-    if let Err(error) = run() {        
-        match *error.kind() {            
-            ErrorKind::Io(_)                    => println!("Standard IO error: {:?}", error),
-            ErrorKind::Reqwest(_)               => println!("Reqwest error: {:?}", error),
-            ErrorKind::ParseIntError(_)         => println!("Standard parse int error: {:?}", error),
-            ErrorKind::RandomResponseError(_)   => println!("User defined error: {:?}", error),
-            _                                   => println!("Other error: {:?}", error),
+    if let Err(error) = run() {
+        match *error.kind() {
+            ErrorKind::Io(_) => println!("Standard IO error: {:?}", error),
+            ErrorKind::Reqwest(_) => println!("Reqwest error: {:?}", error),
+            ErrorKind::ParseIntError(_) => println!("Standard parse int error: {:?}", error),
+            ErrorKind::RandomResponseError(_) => println!("User defined error: {:?}", error),
+            _ => println!("Other error: {:?}", error),
         }
     }
     Ok(())

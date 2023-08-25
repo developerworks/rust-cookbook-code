@@ -1,5 +1,6 @@
-use bitflags::bitflags;
 use std::fmt::{self, Display};
+
+use bitflags::bitflags;
 
 bitflags! {
     struct MyFlags: u32 {
@@ -14,7 +15,7 @@ impl MyFlags {
     pub fn clear(&mut self) -> &mut MyFlags {
         self.bits = 0;
         self
-    }   
+    }
 }
 
 impl Display for MyFlags {
@@ -29,14 +30,14 @@ fn main() {
     // 按位异或: 相同为 0, 不同为 1            if a == b return 0 else return 1
     let e1 = MyFlags::FLAG_A | MyFlags::FLAG_C;
     let e2 = MyFlags::FLAG_B | MyFlags::FLAG_C;
-    assert_eq!((e1 | e2), MyFlags::FLAG_ABC);   
-    assert_eq!((e1 & e2), MyFlags::FLAG_C);    
-    assert_eq!((e1 - e2), MyFlags::FLAG_A);    
-    assert_eq!(!e2, MyFlags::FLAG_A);           
+    assert_eq!((e1 | e2), MyFlags::FLAG_ABC);
+    assert_eq!((e1 & e2), MyFlags::FLAG_C);
+    assert_eq!((e1 - e2), MyFlags::FLAG_A);
+    assert_eq!(!e2, MyFlags::FLAG_A);
 
     let mut flags = MyFlags::FLAG_ABC;
-    assert_eq!(format!("{}", flags),         "00000000000000000000000000000111");
+    assert_eq!(format!("{}", flags), "00000000000000000000000000000111");
     assert_eq!(format!("{}", flags.clear()), "00000000000000000000000000000000");
     assert_eq!(format!("{:?}", MyFlags::FLAG_B), "FLAG_B");
-    assert_eq!(format!("{:?}", MyFlags::FLAG_A | MyFlags::FLAG_B), "FLAG_A | FLAG_B");    
+    assert_eq!(format!("{:?}", MyFlags::FLAG_A | MyFlags::FLAG_B), "FLAG_A | FLAG_B");
 }
